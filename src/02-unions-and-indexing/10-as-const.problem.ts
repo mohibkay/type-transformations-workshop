@@ -18,8 +18,9 @@ export const programModeEnumMap = {
 
 // Different ways to do this.  The first is the most explicit, but the second is the most concise.
 // Note: Object.freeze is a runtime thing, so it doesn't help us here with coolThing.
+// Note inferred deeply
 
-export const programModeEnumMap2 = Object.freeze( {
+export const programModeEnumMap2 = Object.freeze({
   GROUP: "group",
   ANNOUNCEMENT: "announcement",
   ONE_ON_ONE: "1on1",

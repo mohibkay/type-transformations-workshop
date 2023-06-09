@@ -9,7 +9,11 @@ export const programModeEnumMap = {
   PLANNED_SELF_DIRECTED: "plannedSelfDirected",
 } as const;
 
-export type IndividualProgram = unknown;
+type ProgramMode = Omit<typeof programModeEnumMap, "GROUP" | "ANNOUNCEMENT">;
+export type IndividualProgram =  ProgramMode[keyof ProgramMode];
+
+// Another way to do this is to use Exclude
+type ProgramMode2 = Exclude<typeof programModeEnumMap[keyof typeof programModeEnumMap], "group" | "announcement">;
 
 type tests = [
   Expect<
