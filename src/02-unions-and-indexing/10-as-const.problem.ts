@@ -11,7 +11,25 @@ export const programModeEnumMap = {
   SELF_DIRECTED: "selfDirected",
   PLANNED_ONE_ON_ONE: "planned1on1",
   PLANNED_SELF_DIRECTED: "plannedSelfDirected",
-};
+  coolThing: {
+    cool: 'cool thing'
+  }
+} as const;
+
+// Different ways to do this.  The first is the most explicit, but the second is the most concise.
+// Note: Object.freeze is a runtime thing, so it doesn't help us here with coolThing.
+
+export const programModeEnumMap2 = Object.freeze( {
+  GROUP: "group",
+  ANNOUNCEMENT: "announcement",
+  ONE_ON_ONE: "1on1",
+  SELF_DIRECTED: "selfDirected",
+  PLANNED_ONE_ON_ONE: "planned1on1",
+  PLANNED_SELF_DIRECTED: "plannedSelfDirected",
+  coolThing: {
+    cool: 'cool thing'
+  }
+})
 
 export type GroupProgram = typeof programModeEnumMap["GROUP"];
 export type AnnouncementProgram = typeof programModeEnumMap["ANNOUNCEMENT"];
